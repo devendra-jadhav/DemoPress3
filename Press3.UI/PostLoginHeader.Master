@@ -1,0 +1,514 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PostLoginHeader.master.cs" ClientIDMode="static" Inherits="Press3.UI.PostLoginHeader1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="css/openSans.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+    <link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+    <link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+    <%--<link href="assets/admin/pages/timeline.css" rel="stylesheet" type="text/css" />--%>
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+   
+    <style type="text/css">
+        @media (min-width:992px) {
+            .navbar-fixed-top {
+                width: 97%;
+                left: 65px;
+	    }
+        }
+        .pad-left-0 {
+            padding-left: 0px;
+        }
+        .pad-left-5 {
+            padding-left: 5px;
+        }
+        .dropdown-menu li.status_agent span {
+            padding: 8px 14px;
+            line-height: 29px;
+            cursor: pointer;
+        }
+        div.checker {
+            display: inline;
+        }
+        .page-footer-inner a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+         .blockUI  > img{
+            height:80px;
+            width:80px;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            align-content:center;
+          
+        }
+         .blockUI{
+
+             width:100% !important;
+             left:auto !important;
+               border:none;
+            background-color:transparent;
+         }
+
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body class="page-quick-sidebar-over-content page-style-square page-sidebar-closed">
+<!-- BEGIN HEADER -->
+
+<!-- END HEADER -->
+    <input id="hdnAgentName" type="hidden" value="<%= agentName %>" />
+    <input id="hdnRoleId" type="hidden" value="<%= roleId %>" />
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+			
+			<ul class="page-sidebar-menu page-sidebar-menu-closed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<!--<div class="sidebar-toggler">
+					</div>-->
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+				<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+				
+                    <li class="" id="SideBarToggle1">
+
+                        <% if (roleId == 1)
+                           { %>
+                        <a href="/AgentHome.aspx" class="nav-link " />
+                        <% }
+                           else if (roleId == 3)
+                           { %>
+                        <a href="/ManagerDashboard.aspx" class="nav-link " />
+                        <% }
+                           else if (roleId == 2)
+                           { %>
+                        <a href="/SupervisorDashboard.aspx" class="nav-link " />
+                        <% }
+                            else if (roleId == 4)
+                           { %>
+                        <a href="/TicketManagement.aspx" class="nav-link " />
+                        <% }
+                           else
+                           { %>
+                       <a href="javascript:;">
+                    <% } %>
+
+
+					
+					<i class="icon-home"></i>
+					<span class="title">Home</span>
+					
+					<span class="arrow open"></span>
+					</a>
+					
+				</li>
+                    <li id="SideBarToggle2">
+					<a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="glyphicon glyphicon-list-alt" style="margin-left: 10px;"></i>
+					<span class="title">History</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+                        
+                        <li class="nav-item">
+                                        <a href="/CallHistory.aspx" class="nav-link ">
+                                            <span class="title">Call History</span>
+                                        </a>
+                                    </li>
+                        <li class="nav-item">
+                                        <a href="/CallAbandonedHistory.aspx" class="nav-link ">
+                                            <span class="title">Missed Call History</span>
+                                        </a>
+                                    </li>
+                            <% if (Convert.ToInt32(Session["RoleId"]) == 1)
+                               { %>
+                        <li class="nav-item">
+                                        <a href="/MyCallBackRequests.aspx" class="nav-link ">
+                                            <span class="title">CBR History</span>
+                                        </a>
+                                    </li>
+                         <li class="nav-item">
+                                        <a href="/VoiceMails.aspx" class="nav-link ">
+                                            <span class="title">Voice Mails</span>
+                                        </a>
+                                    </li>
+                        <li class="nav-item">
+                                        <a href="/AgentCallEvaluationReport.aspx" class="nav-link ">
+                                            <span class="title">Score Card History</span>
+                                        </a>
+                                    </li>
+                         <li class="nav-item">
+                                        <a href="/TicketManagement.aspx" class="nav-link ">
+                                            <span class="title">Ticket History</span>
+                                        </a>
+                                    </li>
+                        
+                            <% }
+                               else
+                               { %>
+                           <%-- <li class="nav-item">
+                                        <a href="ui_colors.html" class="nav-link ">
+                                            <span class="title">Analytics</span>
+                                        </a>
+                                    </li>--%>
+                        <li class="nav-item">
+                                        <a href="/AgentHistory.aspx" class="nav-link ">
+                                            <span class="title">Agent History</span>
+                                        </a>
+                                    </li>
+                         <li class="nav-item">
+                                        <a href="/CallBackRequests.aspx" class="nav-link ">
+                                            <span class="title">CBR History</span>
+                                        </a>
+                                    </li>
+                        <li class="nav-item">
+                                        <a href="/VoiceMails.aspx" class="nav-link ">
+                                            <span class="title">Voice Mails</span>
+                                        </a>
+                                    </li>
+                        <li class="nav-item">
+                                        <a href="/AgentCallEvaluationReport.aspx" class="nav-link ">
+                                            <span class="title">Score Card History</span>
+                                        </a>
+                                    </li>
+                        <% if (Convert.ToInt32(Session["RoleId"]) != 4)
+                               { %>
+                         <li class="nav-item">
+                                        <a href="/TicketManagement.aspx" class="nav-link ">
+                                            <span class="title">Ticket History</span>
+                                        </a>
+                                    </li>
+                        <% } %>
+                         <% if (Convert.ToInt32(Session["RoleId"]) == 3)
+                               { %>
+                         <li class="nav-item">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <span class="title">Monthly Reports</span>
+                                    <span class="pull-right"><i class="fa fa-angle-right"></i></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="/CallcenterPerformanceReports.aspx" class="nav-link ">
+                                            <span class="title">Call Center Performance</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/AgentPerformance.aspx" class="nav-link ">
+                                            <span class="title">Agent Performance</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/TicketsOverview.aspx" class="nav-link ">
+                                            <span class="title">Ticket Overview</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </li>
+                        <% } %>
+                        <% } %>
+					</ul>
+				</li>
+				<li class="" id="SideBarToggle3">
+					<a href="/Callers.aspx" class="nav-link nav-toggle">
+					<i class="icon-users"></i>
+					<span class="title">CRM</span>
+					<span class="arrow "></span>
+					</a>
+				</li>
+                <% if (Convert.ToInt32(Session["RoleId"]) == 3)
+                   { %>
+				<li class="" id="SideBarToggle4">
+					<a href="javascript:;">
+					<i class="icon-user"></i>
+					<span class="title">Admin</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="/GeneralSettings.aspx" class="nav-link ">
+                                <span class="title">General Settings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/NumberManagement.aspx" class="nav-link ">
+                                <span class="title">Number Management</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ManageSkills.aspx" class="nav-link ">
+                                <span class="title">Agents &amp; Skills</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Studios.aspx" class="nav-link ">
+                                <span class="title">IVR-Studio</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/AgentSettings.aspx" class="nav-link ">
+                                <span class="title">CRM</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Scripts.aspx" class="nav-link ">
+                                <span class="title">Scripts</span>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a href="/adminScorecards.aspx" class="nav-link ">
+                                <span class="title">ScoreCards</span>
+                            </a>
+                        </li>
+					</ul>
+				</li>
+                <% } %>
+				<%--<li>
+					<a href="javascript:;">
+					<i class="icon-puzzle"></i>
+					<span class="title">UI Components</span>
+					<span class="arrow "></span>
+					</a>
+					
+				</li>--%>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+    <form runat="server">
+    <div class="page-header navbar">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+                        <% if (roleId == 1)
+                           { %>
+                        <a href="/AgentHome.aspx" style="font-weight: bold; font-size: 25px;"><img src="assets/img/PRESS3_LOGO_NEW.png" alt="PRESS3" height="35" /></a>
+                            <% }
+                           else if (roleId == 3)
+                           { %>
+                            <a href="/ManagerDashboard.aspx" style="font-weight: bold; font-size: 25px;"><img src="assets/img/PRESS3_LOGO_NEW.png" alt="PRESS3" height="35" /></a>
+                                <% }
+                           else
+                           { %>
+                                <a href="#" style="font-weight: bold; font-size: 25px;"><img src="assets/img/PRESS3_LOGO_NEW.png" alt="PRESS3" height="35" /></a>
+                        <% } %>
+			<div class="menu-toggler sidebar-toggler hide">
+				<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+			</div>
+		</div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+        
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+				
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user right-dd">
+                                    <span class="label label-circle showforAgent" style="display: none; position: absolute; left: 61px; font-size: 11px; top: 36px; background: #8af3fd; color: #016771; font-weight: 600;" id="spanAgentStatus">Online</span>
+
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                        <img alt="" class="img-circle" src="" id="profilePic" />
+                                        <span class="username username-hide-on-mobile" id="spanAgentName"></span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default ulAgentStatuses">
+						<li>
+							<a href="/AgentProfile.aspx?AgentId=<%=Session["AgentId"] %>" class="">
+                                                <i class="icon-user"></i>My Profile </a>
+						</li>
+                        <li>
+							<a id="logout_modal" class="logout_modal">
+                                                <i class="fa fa-sign-out"></i>Log Out </a>
+						</li>
+						
+						<%--<li>
+                         
+                             <asp:LinkButton runat="server" CssClass="pad-left-5"  data-toggle="modal" data-target="#myModal" ><i class="fa fa-sign-out"></i> Log Out</asp:LinkButton>
+                               
+							<%--<a href="#" id="linkLogout">
+							<i class="icon-key"></i> Log Out </a>--%>
+						
+                        
+                       <%-- <li class="status_agent"><span>Online</span></li>
+                        <li class="status_agent"><span>Inbreak</span></li>--%>
+                        
+				<!-- END USER LOGIN DROPDOWN -->
+				
+			</ul>
+                    </li>
+                </ul>
+            
+		</div>
+
+
+         <div class="modal fade" id="modalPreviousSession" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    
+                    <div class="modal-body">
+                        <h4 class="modal-title bold text-warning text-center"><i class="fa fa-exclamation-circle margin-right-5"></i>Alert</h4>
+
+                                        <div style="color: #8c9fa8; padding: 15px; line-height: 22px;" class="text-center">Invalid session. Please login</div>
+                    <div class="text-center margin-top-5">
+                                            <asp:Button runat="server" CssClass="btn btn-success" OnClick="Logout_Click" Text="OK"></asp:Button>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                                        <h5 class="modal-title text-center"></h5>
+                  </div>
+                  <div class="modal-body text-center" id="Modal">
+                    <h3 class="bold">Are you sure?</h3>
+                  </div>
+                  <div class="modal-footer">
+                                        <asp:Button runat="server" type="button" class="btn btn-primary rounded-4" OnClick="Logout_Click" Text="Log Out"></asp:Button>
+                                        <asp:Button runat="server" type="button" class="btn btn-secondary rounded-4" data-dismiss="modal" Text="Close"></asp:Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+       
+        
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+
+        <div class="clearfix"></div>
+		        <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                </asp:ContentPlaceHolder>
+         </form>
+	        </div>
+	        <!-- END CONTENT -->
+	        <!-- BEGIN QUICK SIDEBAR -->
+	
+	        <!-- END QUICK SIDEBAR -->
+    
+        </div>
+    
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+        <div class="page-footer-inner col-md-12" style="margin: 10px auto; color: white; text-align: center;">
+        Copyright &copy; <%= DateTime.Now.Year %> <a href="https://www.smscountry.com" target="_blank">SMSCountry Networks Pvt Ltd.</a> All rights reserved. Designed and Developed by <a href="https://www.smscountry.com" target="_blank">SMSCountry</a>
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+    <%--<script src="assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>--%>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<%--    <script src="assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+    <script src="assets/admin/pages/scripts/timeline.js" type="text/javascript"></script>--%>
+    <script src="scripts/custom/postlogin-master.js?v=13" type="text/javascript"></script>
+    <script src="scripts/custom/webphone.js"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+    jQuery(document).ready(function () {
+        Metronic.init(); // init metronic core componets
+        Layout.init(); // init layout
+        QuickSidebar.init(); // init quick sidebar
+        //Demo.init(); // init demo features 
+        //Index.init();
+        //Index.initDashboardDaterange();
+        //Index.initJQVMAP(); // init index page's custom scripts
+        //Index.initCalendar(); // init index page's custom scripts
+        //Index.initCharts(); // init index page's custom scripts
+        //Index.initChat();
+        //Index.initMiniCharts();
+        //Tasks.initDashboardWidget();
+
+        $("#spanAgentName").html($("#hdnAgentName").val());
+     
+
+        //$(".dropdown-user").mouseover(function () {
+        //    $(this).click();
+        //}).click(function () {
+        //    if ($(".ulAgentStatuses").is(":visible")) {
+        //        $(".ulAgentStatuses").hide();
+        //    }
+        //    else {
+        //        $(".ulAgentStatuses").show();
+        //    }
+        //});
+
+        //$(".dropdown-user").mouseout(function () {
+
+        //    //$(".ulAgentStatuses").hide();
+        //});
+
+
+
+        $('#logout_modal').click(function () {
+            $('#myModal').modal('show');
+        });
+       
+    });
+    
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+</html>

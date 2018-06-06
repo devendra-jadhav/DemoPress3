@@ -1,0 +1,30 @@
+﻿.clear{clear:both;margin-bottom:7px;}
+
+/* login */
+.login-types{float:right;}
+.login-types a{text-decoration:none;}
+
+/* dashboard */
+#ivr_numbers_box .no_list{width:95%;margin-bottom:20px;}
+#ivr_numbers_box .no_list .rbt_no_list{margin:0px 5px 0px 25px;}
+.a_hide_ivr_no,.a_chg_ivr_no{width:20%;text-decoration:none;margin-left:5%;font-size:12px;}
+.spn_ivr_number{font-style:italic;color:green;}
+.red_text { color: #E02222;}
+.partition {border-bottom: 1px solid #EEEEEE; display: block;float: left;margin: 0 0 20px;width: 100%;}
+.news-blocks {background: none repeat scroll 0 0 #FAF6EA;border-top: 2px solid #FAF6EA;cursor: pointer;    margin-bottom: 10px;padding: 0 5px;text-align:center;width:22%;float:left;margin-right:2%}
+.news-blocks a{text-decoration:none;}
+.news-blocks .blue_text{color:#208DBE !important;}
+.a_newivr {float:right;margin-top:20px;}
+.ivr_no_change{margin-left:2%;font-size:13px;text-decoration:none;cursor:pointer;}
+.news-blocks .delete{float:right;display:none;}
+div.news-blocks:hover .delete{display:block;}
+
+/* profile begin */
+
+.profile_info .controls h5{font-size:16px!important;margin-top:5px!important}
+.profile_info .control-group{margin-bottom:5px!important}
+
+/* profile end */
+.inumber { width :150px;float:left;}
+.inumber span {margin-left: 10px; }
+.sticky_agent_options span {margin-left: 10px; margin-right: 10px;}

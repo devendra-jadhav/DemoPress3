@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{554BCB0D-6A5D-44B8-87C4-CB4066D0C8B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Press3.UserDefinedClasses</RootNamespace>
+    <AssemblyName>Press3.UserDefinedClasses</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\madhu\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountCallerId.cs" />
+    <Compile Include="AccountCustomer.cs" />
+    <Compile Include="AccountSetting.cs" />
+    <Compile Include="Agent.cs" />
+    <Compile Include="AgentCommunicationPreference.cs" />
+    <Compile Include="AgentHistory.cs" />
+    <Compile Include="AgentLoginActivity.cs" />
+    <Compile Include="AgentScoreCard.cs" />
+    <Compile Include="AgentSkill.cs" />
+    <Compile Include="AgentLogin.cs" />
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="Call.cs" />
+    <Compile Include="CallbackRequest.cs" />
+    <Compile Include="Callers.cs" />
+    <Compile Include="CallHistory.cs" />
+    <Compile Include="CallHistoryDetails.cs" />
+    <Compile Include="DataBaseParameters.cs" />
+    <Compile Include="DialPlan.cs" />
+    <Compile Include="ExternalSipUserAccount.cs" />
+    <Compile Include="Gateway.cs" />
+    <Compile Include="GeneralSettings.cs" />
+    <Compile Include="HttpParameters.cs" />
+    <Compile Include="FreeSwitchRegisterParameters.cs" />
+    <Compile Include="Label.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="OutboundCall.cs" />
+    <Compile Include="OutboundCommunicationSettings.cs" />
+    <Compile Include="Priorities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseFormat.cs" />
+    <Compile Include="SipUserAccount.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="SkillGroup.cs" />
+    <Compile Include="SkillGroupScript.cs" />
+    <Compile Include="StoredProcedures.cs" />
+    <Compile Include="Studio.cs" />
+    <Compile Include="StudioCallerId.cs" />
+    <Compile Include="TeamManagement.cs" />
+    <Compile Include="Template.cs" />
+    <Compile Include="Ticket.cs" />
+    <Compile Include="TicketStatus.cs" />
+    <Compile Include="TimeSlot.cs" />
+    <Compile Include="Validator.cs" />
+    <Compile Include="VoiceMail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Press3.UserDefinedClasses.dll" />
+    <Content Include="bin\Debug\Press3.UserDefinedClasses.pdb" />
+    <Content Include="obj\Debug\Press3.UserDefinedClasses.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Press3.UserDefinedClasses.dll" />
+    <Content Include="obj\Debug\Press3.UserDefinedClasses.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Press3.UserDefinedClasses.csprojResolveAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Press3.Utilities\Press3.Utilities.csproj">
+      <Project>{80608ebf-6dda-49e4-9f84-c64af9d61140}</Project>
+      <Name>Press3.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

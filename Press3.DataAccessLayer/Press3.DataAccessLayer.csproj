@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94982F3B-6CF5-4DCA-A5CF-811EAA0E4440}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Press3.DataAccessLayer</RootNamespace>
+    <AssemblyName>Press3.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agent.cs" />
+    <Compile Include="AgentContact.cs" />
+    <Compile Include="Caller.cs" />
+    <Compile Include="Calls.cs" />
+    <Compile Include="Conference.cs" />
+    <Compile Include="ConfigInfo.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="DirectDialExtension.cs" />
+    <Compile Include="GetStudioXml.cs" />
+    <Compile Include="GetStudioXmlV1.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="OutboundCall.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scorecards.cs" />
+    <Compile Include="Scripts.cs" />
+    <Compile Include="SipPhoneRegistration.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="SkillGroup.cs" />
+    <Compile Include="Studio.cs" />
+    <Compile Include="Ticket.cs" />
+    <Compile Include="WebSocketController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Press3.UserDefinedClasses\Press3.UserDefinedClasses.csproj">
+      <Project>{554bcb0d-6a5d-44b8-87c4-cb4066d0c8b5}</Project>
+      <Name>Press3.UserDefinedClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Press3.Utilities\Press3.Utilities.csproj">
+      <Project>{80608ebf-6dda-49e4-9f84-c64af9d61140}</Project>
+      <Name>Press3.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\Press3.DataAccessLayer.dll" />
+    <Content Include="bin\Debug\Press3.DataAccessLayer.pdb" />
+    <Content Include="bin\Debug\Press3.UserDefinedClasses.dll" />
+    <Content Include="bin\Debug\Press3.UserDefinedClasses.pdb" />
+    <Content Include="bin\Debug\Press3.Utilities.dll" />
+    <Content Include="bin\Debug\Press3.Utilities.pdb" />
+    <Content Include="bin\Release\log4net.dll" />
+    <Content Include="obj\Debug\Press3.DataAccessLayer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Press3.DataAccessLayer.dll" />
+    <Content Include="obj\Debug\Press3.DataAccessLayer.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Press3.DataAccessLayer.csprojResolveAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
