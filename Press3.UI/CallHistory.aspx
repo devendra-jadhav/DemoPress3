@@ -153,7 +153,7 @@
                 <div class="graphs-panel">
                    
                     <div class="graphs-panel-head clearfix">
-                        <label class="pull-left mb-0 margin-top-10">Call History Report</label>
+                        <label class="pull-left mb-0 margin-top-10">Call History Report Test</label>
                     <label class="pull-right mb-0">
                             <label id="inboundButton" class="mb-0">
                                 <asp:Button ID="DownloadExcelReports" runat="server" CssClass="btn btn-success btn-sm" Text="Download to Excel" OnClick="DownloadExcelReports_Click" /></label>
